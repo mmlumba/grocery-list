@@ -16,6 +16,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem pg
 gem 'pg', '~> 0.18.4'
 
+#gem bootstrap
+gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'simple_form'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

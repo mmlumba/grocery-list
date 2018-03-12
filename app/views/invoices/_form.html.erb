@@ -1,0 +1,72 @@
+<div class="col-xs-12">
+<%= simple_form_for(@invoice) do |f| %>
+  <% if @invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <% @invoice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row invoice-info">
+  <div class="col-xs-4 invoice-col">
+    Form
+    <address>
+      <div class="field">
+        <%= f.input_field :company, class: "form_control" %>
+          <br>
+          <input class="form_control" placeholder="address line 1">
+          <input class="form_control" placeholder="address line 2">
+          <input class="form_control" placeholder="address line 3">
+    </address>
+    </div>
+
+<div class="col-xs-4 invoice-col">
+    To
+    <address>
+    <%= f.input_field :contragent, class: "form_control" %><br>
+    <input class="form_control" placeholder="address line 1">
+    <input class="form_control" placeholder="address line 2">
+    <input class="form_control" placeholder="address line 3">
+ </address>
+</div>
+
+
+<div class="col-xs-4 invoice-col">
+<form class="form-horizontal">
+
+  <div class="form-group">
+  <div class="col-xs-4"><label>Label</label></div>
+  <div class="col-xs-8"><span id="invoice_number"></span></div>
+  </div>
+
+
+  <div class="col-xs-12"></div>
+  <div class="form-group">
+   <div class="col-xs-4"> <%= f.label :currency %></div>
+   <div class="col-xs-8"> <%= f.input_field :currency, class: "form_control"  %></div>
+  </div>
+
+  <div class="col-xs-12"></div>
+  <div class="form-group">
+  <div class="col-xs-4"><%= f.label :amount %></div>
+  <div class="col-xs-8"> <%= f.input_field :amount, class: "form_control"  %></div>
+  </div>
+
+  <div class="col-xs-12"></div>
+  <div class="form-group">
+  <div class="col-xs-4">  <%= f.label :date %></div>
+  <div class="col-xs-8">  <%= f.input_field :date, class: "form_control datepicker", as: :string %></div>
+  </div>
+</form>
+</div>
+  <div class="actions">
+    <%= f.submit 'SUMBIT PAYMENT', class: "btn btn-primary"  %>
+  </div>
+<% end %>
+</div>
+</div>
